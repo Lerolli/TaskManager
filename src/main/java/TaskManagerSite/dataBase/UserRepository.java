@@ -6,10 +6,20 @@ public class UserRepository {
     private final ArrayList<User> userList;
     private final ArrayList<String> nameUsers;
     private static volatile UserRepository instance;
+    private User activeUser;
 
     public UserRepository(){
         userList = new ArrayList<>();
         nameUsers = new ArrayList<>();
+        activeUser = null;
+    }
+
+    public void setActiveUser(User activeUser) {
+        this.activeUser = activeUser;
+    }
+
+    public User getActiveUser(){
+        return activeUser;
     }
 
 
