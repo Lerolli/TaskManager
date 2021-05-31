@@ -1,5 +1,0 @@
-spring.jpa.database=postgresql
-spring.datasource.url=jdbc:postgresql://localhost:5432/TaskManager
-spring.datasource.username=root
-spring.datasource.password=123
-spring.jpa.generate-ddl=true
