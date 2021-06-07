@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Мои списки</title>
+  <title>Регистрация</title>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 <body>
@@ -14,23 +14,25 @@
       <li class="nav-item"><a href="/sharedLists" class="nav-link">Доступные списки</a></li>
       <li class="nav-item"><a href="/registration" class="nav-link">Регистрация</a></li>
       <li class="nav-item"><a href="/login" class="nav-link" >Авторизация</a></li>
-      <li class="nav-item"><a href="/reLogin" class="nav-link">Выйти</a></li>
+      <li class="nav-item"><a href="/reLogin" class="nav-link" >Выйти</a></li>
     </ul>
   </header>
 </div>
 
 
-
-<form action="/myLists" method="post">
-  <input type="text" name="nameList" placeholder="Введите название списка" class="form-control"><br>
-  <button type="submit" class="btn btn-success">Добавить список</button><br>
+<form method="post">
+  <input type="text" name="task" placeholder="Введите новую задачу" class="form-control"><br>
+  <button type="submit" class="btn btn-success">Добавить задачу</button><br>
 </form>
 
 <div class="container mt-5">
-  <div th:each="task : ${tasks}" >
-    <p th:text="${task.getName()}"></p><br>
-    <a th:href="'/myLists/' + ${task.getName()}" class="btn btn-warning">Посмотреть задачи</a><br>
-    <a th:href="'/myLists/' + ${task.getName()} + '/share'" class="btn btn-warning">Поделиться</a><br>
+  <div th:each="task : ${list.getTasks()}" >
+    <p th:text="${task}"></p>
+    <a th:href="'/myLists/' + ${list.getName()} +'/'+ ${task} + '/edit'" class="btn btn-success">Редактировать</a><br>
+    <form th:action="'/myLists/' + ${list.getName()} +'/'+ ${task} + '/delete'"  method=post>
+      <button class="btn btn-warning" type="submit">Удалить</button>
+    </form>
+
   </div>
 </div>
 </body>

@@ -1,0 +1,30 @@
+Anton
+1
+myLists
+SharedLists
+два два два
+Два два два
+!endList!
+Доступный список
+авпитпьрь
+ывпчасптиьтб
+!endList!
+endUser
+Ксюша
+1
+myLists
+два два два
+Два два два
+!endList!
+SharedLists
+endUser
+user
+1
+myLists
+Доступный список
+авпитпьрь
+ывпчасптиьтб
+!endList!
+SharedLists
+endUser
+end

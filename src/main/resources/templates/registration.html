@@ -14,16 +14,17 @@
         <li class="nav-item"><a href="/sharedLists" class="nav-link">Доступные списки</a></li>
         <li class="nav-item"><a href="/registration" class="nav-link active" aria-current="page">Регистрация</a></li>
         <li class="nav-item"><a href="/login" class="nav-link" >Авторизация</a></li>
+        <li class="nav-item"><a href="/reLogin" class="nav-link" >Выйти</a></li>
       </ul>
     </header>
   </div>
 
   Добавление нового пользователя
-  <p th:text="'Пользователь ' + ${message} + ' exists' "/>
+
   <form action="/registration" method="post">
     <div><label> Имя пользователя: <input type="text" name="username"/> </label> </div>
     <div><label> Пароль: <input type="password" name="password"/> </label> </div>
-    <div><input type="submit" value="Войти"/> </div>
+    <div><input type="submit" value="Зарегистрироваться"/> </div>
   </form>
   </body>
   </html>

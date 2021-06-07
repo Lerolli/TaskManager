@@ -14,24 +14,16 @@
       <li class="nav-item"><a href="/sharedLists" class="nav-link">Доступные списки</a></li>
       <li class="nav-item"><a href="/registration" class="nav-link">Регистрация</a></li>
       <li class="nav-item"><a href="/login" class="nav-link" >Авторизация</a></li>
-      <li class="nav-item"><a href="/reLogin" class="nav-link">Выйти</a></li>
+      <li class="nav-item"><a href="/reLogin" class="nav-link" >Выйти</a></li>
     </ul>
   </header>
 </div>
 
 
-
-<form action="/myLists" method="post">
-  <input type="text" name="nameList" placeholder="Введите название списка" class="form-control"><br>
-  <button type="submit" class="btn btn-success">Добавить список</button><br>
+<form method="post">
+  <input type="text" name="newTask" placeholder="Переименуйте задачу" class="form-control"><br>
+  <button type="submit" class="btn btn-success">Редактировать</button><br>
 </form>
 
-<div class="container mt-5">
-  <div th:each="task : ${tasks}" >
-    <p th:text="${task.getName()}"></p><br>
-    <a th:href="'/myLists/' + ${task.getName()}" class="btn btn-warning">Посмотреть задачи</a><br>
-    <a th:href="'/myLists/' + ${task.getName()} + '/share'" class="btn btn-warning">Поделиться</a><br>
-  </div>
-</div>
 </body>
 </html>

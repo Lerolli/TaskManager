@@ -14,9 +14,18 @@
       <li class="nav-item"><a href="/sharedLists" class="nav-link active" aria-current="page">Доступные списки</a></li>
       <li class="nav-item"><a href="/registration" class="nav-link">Регистрация</a></li>
       <li class="nav-item"><a href="/login" class="nav-link">Авторизация</a></li>
+      <li class="nav-item"><a href="/reLogin" class="nav-link" >Выйти</a></li>
     </ul>
   </header>
 </div>
+
+<div class="container mt-5">
+  <div th:each="task : ${tasks}" >
+    <p th:text="${task.getName()}"></p><br>
+    <a th:href="'/shared/' + ${task.getName()}" class="btn btn-warning">Посмотреть задачи</a><br>
+  </div>
+</div>
+
 
 </body>
 </html>
